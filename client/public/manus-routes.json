@@ -1,0 +1,1 @@
+{"routes":[{"path":"/","title":"Eventora — Discover events"},{"path":"/events/:id","title":"Eventora — Event details"},{"path":"/registrations","title":"Eventora — Registration desk"},{"path":"/404","title":"Eventora — Not found"}]}

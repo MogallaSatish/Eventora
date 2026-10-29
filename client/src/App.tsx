@@ -1,0 +1,17 @@
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import NotFound from "@/pages/NotFound";
+import { Route, Switch } from "wouter";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import EventDetails from "./pages/EventDetails";
+import Home from "./pages/Home";
+import Registrations from "./pages/Registrations";
+
+function Router() {
+  return <Switch><Route path="/" component={Home} /><Route path="/events/:id" component={EventDetails} /><Route path="/registrations" component={Registrations} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
+}
+
+export default function App() {
+  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><Router /></TooltipProvider></ThemeProvider></ErrorBoundary>;
+}
